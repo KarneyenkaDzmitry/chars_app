@@ -1,46 +1,32 @@
 'use strict';
 const fs = require('fs');
-const Client = require('node-rest-client').Client;
-const client = new Client();
-const fileDB = './resources/R&MDB.json'
 const startUrl = "https://rickandmortyapi.com/api/character/";
+const request = require('request-promise-native');
 
-async function main(parameters) {
+function main(parameters) {
     getBase(startUrl)
-        .then(() => getCharacter(parameters))
-        .then(character => {
-            console.log(character);
-            fs.writeFileSync('./resources/result.json', JSON.stringify(character), 'utf8');
+        .then(data => getCharacter(data, parameters))
+        .then(characters => {
+            characters.forEach(element=>{
+                console.log(element);
+            });
+            fs.writeFileSync('./resources/result.json', JSON.stringify(characters), 'utf8');
         })
         .catch(error=>console.log(error));
 };
 
 function getBase(url) {
-    let array = [];
-    fs.existsSync(fileDB) ? '' : fs.writeFileSync(fileDB, '{"results":[]}', 'utf8');
-    return new Promise((resolve, reject) => {
-        try {
-            client.get(url, (data, response) => {
-                if (response.statusCode === 200) {
-                    array = JSON.parse(fs.readFileSync(fileDB, 'utf8')).results;
-                    array = [...array, ...data.results];
-                    fs.writeFileSync(fileDB, '{\"results\": ' + JSON.stringify(array) + '}', 'utf-8');
-                    url = data.info.next;
-                    return url === '' ? array : getBase(url);
-                }
-                else {
-                    console.log('Something went wrong! Response code:' + response.statusCode);
-                }
-            });
-            return resolve(array);
-        } catch (error) {
-            return reject(error);
-        }
-    });
-}
-
-function getCharacter(parameters) {
-    let dataBase = JSON.parse(fs.readFileSync(fileDB, 'utf8')).results;
+        let result = [];
+        const getChars = (url) => request(url, {json: true}).then((body) => {
+            result =[...result,...body.results];
+            if (body.info.next !== '') {
+                return getChars(body.info.next);
+            } else return result;
+        });
+        return getChars(url);
+    }
+    
+function getCharacter(dataBase, parameters) {
     Object.keys(parameters).forEach(elem => {
         if (elem === 'id') {
             dataBase = dataBase.filter(
