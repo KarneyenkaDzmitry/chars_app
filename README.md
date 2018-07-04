@@ -25,5 +25,27 @@ There is a list of modules and their versions:
 
 #### Available options of filter:
 
+* --version        Show version number                                 [boolean]
+*	--id, -i         Number of ID
+* --name, -n       Name of character
+* --status, --st   Status: alive or dead
+* --species, --sp  Species of character(e.g. Human)
+* --type, -t       Type
+* --gender, -g     Gender: male or female
+* --origin, -o     Origin(e.g. Earth)
+* --location, -l   Location(e.g. Earth)
+* --help, -l       Show help                                           [boolean]
 
 
+
+Examples:
+
+	index.js -n Alex
+
+	index.js --st Alive
+
+
+
+	
+
+Created by Dzmitry Karneyenka
