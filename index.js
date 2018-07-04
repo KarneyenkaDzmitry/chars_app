@@ -9,8 +9,8 @@ const args = require('yargs')
     .option('species').alias('sp', 'species').nargs('sp', 1).describe('sp', 'Species of character(e.g. Human)')
     .option('type').alias('t', 'type').nargs('t', 1).describe('t', 'Type')
     .option('gender').alias('g', 'gender').nargs('g', 1).describe('g', 'Gender: male or female')
-    .option('origin').alias('o', 'origin').nargs('o', 1).describe('o', 'Origin(e.g. Earth)')
-    .option('location').alias('l', 'location').nargs('l', 1).describe('l', 'Location(e.g. Earth)')
+    .option('origin').alias('o', 'origin').nargs('o', 1).describe('o', 'Origin name (e.g. Earth)')
+    .option('location').alias('l', 'location').nargs('l', 1).describe('l', 'Location name(e.g. Earth)')
     .help('h').alias('h', 'help')
     .epilogue('Created by Dzmitry Karneyenka')
     .argv
@@ -23,7 +23,6 @@ function second() {
     });
     return JSON.parse(result.slice(0, -1) + '}');
 }
-
 finder.main(second());
 
 
