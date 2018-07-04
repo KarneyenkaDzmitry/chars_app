@@ -4,7 +4,8 @@
   "description": "seaching for character from rickandmartyapi.com source",
   "main": "index.js",
   "scripts": {
-    "test": "test, start"
+    "test": "test, start",
+    "postinstall": "mkdir resources"
   },
   "repository": {
     "type": "git",
