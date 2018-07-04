@@ -37,8 +37,17 @@ There is a list of modules and their versions:
 * --location, -l   Location name (e.g. Earth)
 * --help, -l       Show help                                           [boolean]
 
+### Note
+
+The filter finds a full match id, but a partial match for  other options.<br> In addition it compares with ignoring case. 
+
 ### Examples:
-`node index.js --name rick --status dead --gender male --location 'Citadel of Ricks'`
+`node index.js --name rick --status dead --gender male --location 'Citadel of Ricks'
+node index.js --id 45
+node index.js --name rick --status dead
+node index.js --status dead --location 'Citadel of Ricks
+node index.js --gender male --location 'Citadel of Ricks`
+
 	
 ## Author 
 
