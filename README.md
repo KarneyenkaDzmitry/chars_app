@@ -23,10 +23,10 @@ There is a list of modules and their versions:
 
 ## Usage
 
-#### Available options of filter:
+#### Available options for filtering:
 
 * --version        Show version number                                 [boolean]
-*	--id, -i         Number of ID
+* --id, -i         Number of ID
 * --name, -n       Name of character
 * --status, --st   Status: alive or dead
 * --species, --sp  Species of character(e.g. Human)
@@ -48,4 +48,6 @@ Examples:
 
 	
 
-Created by Dzmitry Karneyenka
+## Author 
+
+### Dzmitry_Karneyenka, Republic of Belarus, Minsk
