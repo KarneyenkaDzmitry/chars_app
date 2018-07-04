@@ -48,6 +48,9 @@ The filter finds a full match id, but a partial match for  other options.<br> In
 `node index.js --status dead --location 'Citadel of Ricks`<br>
 `node index.js --gender male --location 'Citadel of Ricks`<br>
 
+### Hepl message
+
+#### $ node index.js --help
 	
 ## Author 
 
