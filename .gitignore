@@ -6,9 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # json files and xlsx files
-resources/*.xlsx
-resources/*.json
-resources/
+#resources/*.xlsx
+#resources/*.json
+resources
 *.xlsx
 
 # Runtime data
