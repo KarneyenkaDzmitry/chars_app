@@ -1,6 +1,7 @@
 # chars_app version 1.0.0 ([AT Lab#19])
 
 The application finds a character with entered properties on [rickandmortyapi.com](https://rickandmortyapi.com/).<br>
+[Data base of all characters as json data](https://rickandmortyapi.com/api/character/)
 
 ## Implementation
 
@@ -23,7 +24,7 @@ There is a list of modules and their versions:
 
 ## Usage
 
-#### Available options for filtering:
+### Available options for filtering:
 
 * --version        Show version number                                 [boolean]
 * --id, -i         Number of ID
@@ -32,22 +33,13 @@ There is a list of modules and their versions:
 * --species, --sp  Species of character(e.g. Human)
 * --type, -t       Type
 * --gender, -g     Gender: male or female
-* --origin, -o     Origin(e.g. Earth)
-* --location, -l   Location(e.g. Earth)
+* --origin, -o     Origin name (e.g. Earth)
+* --location, -l   Location name (e.g. Earth)
 * --help, -l       Show help                                           [boolean]
 
-
-
-Examples:
-
-	index.js -n Alex
-
-	index.js --st Alive
-
-
-
+### Examples:
+`node index.js --name rick --status dead --gender male --location 'Citadel of Ricks'`
 	
-
 ## Author 
 
 ### Dzmitry_Karneyenka, Republic of Belarus, Minsk
