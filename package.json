@@ -4,8 +4,8 @@
   "description": "seaching for character from rickandmartyapi.com source",
   "main": "index.js",
   "scripts": {
-    "test": "test, start",
-    "postinstall": "mkdir resources"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "mkdir resources && echo The folder contains all json files that the application uses>./resources/info.txt"
   },
   "repository": {
     "type": "git",
